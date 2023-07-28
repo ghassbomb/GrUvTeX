@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main id="main" class="archive">
+  <h1>{{ .Title }}</h1>
+  <ul>
+    {{ range .Pages }}
+      <li>
+        <a class="link" href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+  <div class="post-group">
+    <h2>...</h2>
+  </div>
+</main>
+
+{{ end }}
