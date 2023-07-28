@@ -27,9 +27,9 @@ GrUvTeX is a LaTeX-inspired theme that utilizes the various gruvbox color scheme
 <br>
 
 
-|                               Home Page                               |                               Login Page                               |
-| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
+|                               Home Page                               |
+| :-------------------------------------------------------------------: |
+| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> |
 
 </details>
 
@@ -41,7 +41,7 @@ Create a new hugo site with the command `hugo new site sitename` and cd into it.
 
 ## Usage
 
-Refer to the [hugo.toml](/themes/GrUvTeX/hugo.toml) for the theme for a commented file on configuring this theme.
+Refer to the [hugo.toml](./hugo.toml).
 
 ## Roadmap
 
