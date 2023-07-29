@@ -15,13 +15,15 @@
 /* global */
 
 * {
+  text-rendering: optimizeLegibility;
   box-sizing: border-box;
+  hyphens: auto;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-size: 115%;
+  font-size: 120%;
 }
 
 a {
@@ -242,8 +244,13 @@ footer > .footnote {
 
 /* content */
 
+.post-title {
+  font-size: 1.8rem;
+}
+
 .content {
-  font-size: 110%;
+  font-size: 120%;
+  line-height: 145%;
 }
 
 .content :last-child {
@@ -286,7 +293,10 @@ footer > .footnote {
 .content blockquote {
   border-left: var(--color-foreground) 2px solid;
   font-style: italic;
-  padding: 1rem 0 1rem 2rem;
+  font-size: 22px;
+  line-height: 130%;
+  margin: 1.5em 0 1.5em 0;
+  padding-left: 2em;
 }
 
 .content code {
@@ -303,31 +313,32 @@ footer > .footnote {
 .content h4,
 .content h5,
 .content h6 {
-  line-height: 1.5;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .content h1 {
-  font-size: 2.1rem;
-}
-
-.content h2 {
   font-size: 1.8rem;
 }
 
+.content h2 {
+  font-size: 1.7rem;
+}
+
 .content h3 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .content h4 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .content h5 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .content h6 {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .content img {
@@ -351,25 +362,37 @@ footer > .footnote {
   padding: 0;
 }
 
+.content ol,
+.content ul {
+  margin-left: 1.5rem;
+}
+
 .content table {
-  display: block;
-  overflow-x: auto;
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  width: 95%;
+}
+
+.content td,
+.content th,
+.content tr {
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
 }
 
 .content td,
 .content th {
-  border: var(--color-foreground) 1px solid;
-  padding: 0.1rem 0.5rem;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  font-size: 90%;
 }
 
-.content th {
-  background-color: var(--color-foreground);
-  color: var(--color-background);
-}
-
-.content ol,
-.content ul {
-  margin-left: 1.5rem;
+table th {
+  font-weight: normal;
+  text-transform: lowercase;
+  font-size: 95%;
+  padding: 0.3rem 0.5rem;
+  line-height: 1.05;
 }
 
 #share-buttons {
