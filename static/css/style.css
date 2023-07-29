@@ -242,6 +242,10 @@ footer > .footnote {
 
 /* content */
 
+.content {
+  font-size: 110%;
+}
+
 .content :last-child {
   margin-bottom: 0;
 }
