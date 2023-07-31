@@ -10,9 +10,9 @@
   --color-purple: #d3869b;
   --color-aqua: #8ec07c;
   --color-gray: #a89984;
-  --font: 'Latin Modern Roman', serif;
+  --font: "Latin Modern Roman", serif;
+  font-size: 22px; /* Base Font Size */
 }
-
 /* global */
 
 * {
@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: 120%;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -37,10 +37,6 @@ a:hover {
 }
 
 @media screen and (min-width: 768px) {
-  header > h1 {
-    font-size: 2.8rem;
-    text-shadow: .5px .5px #333E51,1px 1px #333E51,1.5px 1.5px #333E51,2px 2px #333E51,2.5px 2.5px #333E51,3px 3px #333E51,3.5px 3.5px #333E51,4px 4px #333E51,4.5px 4.5px #333E51,5px 5px #333E51,5.5px 5.5px #333E51,6px 6px #333E51,6.5px 6.5px #333E51,7px 7px #333E51;
-  }
   main > .post-group > ul {
     margin-left: 1rem;
     padding-left: 2rem;
@@ -69,7 +65,7 @@ time {
 
 .link {
   color: var(--color-red);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .link:hover {
@@ -78,7 +74,7 @@ time {
 
 .summary {
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 0.75rem;
 }
 
 .paginator {
@@ -119,19 +115,26 @@ header > h1 {
   font-variant: small-caps;
   letter-spacing: 13px;
   text-align: center;
+  font-size: 3.375rem;
+  text-shadow: 0.5px 0.5px #333e51, 1px 1px #333e51, 1.5px 1.5px #333e51,
+    2px 2px #333e51, 2.5px 2.5px #333e51, 3px 3px #333e51, 3.5px 3.5px #333e51,
+    4px 4px #333e51, 4.5px 4.5px #333e51, 5px 5px #333e51, 5.5px 5.5px #333e51,
+    6px 6px #333e51, 6.5px 6.5px #333e51, 7px 7px #333e51;
 }
 
 header > nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-variant: small-caps;
+  font-weight: bold;
   flex-wrap: wrap;
-  max-width: 768px;
+  max-width: 1000px;
   width: 100%;
 }
 
 header > nav > span > a {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* main */
@@ -157,14 +160,10 @@ main > .content {
 main > .warning {
   background-color: var(--color-red);
   color: var(--color-foreground);
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   margin: 2rem 0;
   padding: 1rem 0;
   text-align: center;
-}
-
-main :target {
-  background-color: azure;
 }
 
 main > .post-group > ul {
@@ -215,14 +214,14 @@ main > .post > h2 {
 }
 
 .metadata time {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: normal;
   margin-left: 0;
   justify-self: flex-end;
 }
 
 .metadata span {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: normal;
   color: var(--color-gray);
   margin-right: 1rem;
@@ -237,7 +236,7 @@ main > .post > .content {
 footer {
   align-items: center;
   display: flex;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   flex-direction: column;
 }
 
@@ -249,12 +248,7 @@ footer > .footnote {
 /* content */
 
 .post-title {
-  font-size: 1.8rem;
-}
-
-.content {
-  font-size: 120%;
-  line-height: 140%;
+  font-size: 2.25rem;
 }
 
 .content :last-child {
@@ -263,7 +257,7 @@ footer > .footnote {
 
 .content a {
   color: var(--color-red);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .content a:hover {
@@ -296,10 +290,13 @@ footer > .footnote {
 
 .content blockquote {
   border-left: var(--color-foreground) 2px solid;
-  font-size: 22px;
-  line-height: 130%;
   margin: 1.5em 0 1.5em 0;
   padding-left: 2em;
+}
+
+.content blockquote > p {
+  line-height: 130%;
+  font-size: 0.9rem;
 }
 
 .content code {
@@ -322,33 +319,23 @@ footer > .footnote {
 }
 
 .content h1 {
-  font-size: 1.8rem;
-  line-height: 2rem;
+  font-size: 3.375rem;
+  line-height: -1rem;
 }
 
 .content h2 {
-  font-size: 1.7rem;
-  line-height: 1.9rem;
+  font-size: 2.25rem;
+  line-height: -0.8rem;
 }
 
 .content h3 {
-  font-size: 1.6rem;
-  line-height: 1.8rem;
+  font-size: 1.5rem;
+  line-height: -0.6rem;
 }
 
 .content h4 {
-  font-size: 1.5rem;
-  line-height: 1.7rem;
-}
-
-.content h5 {
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-}
-
-.content h6 {
-  font-size: 1.3rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: -0.4rem;
 }
 
 .content img {
@@ -357,7 +344,7 @@ footer > .footnote {
 
 .content p {
   text-align: left;
-  font-size: 22px;
+  font-size: 1rem;
   line-height: 33px;
   max-width: 750px;
 }
@@ -397,13 +384,13 @@ footer > .footnote {
 .content th {
   padding-left: 0.3em;
   padding-right: 0.3em;
-  font-size: 90%;
+  font-size: 0.9rem;
 }
 
 table th {
   font-weight: normal;
   text-transform: lowercase;
-  font-size: 95%;
+  font-size: 0.95rem;
   padding: 0.3rem 0.5rem;
   line-height: 1.05;
 }
@@ -413,5 +400,78 @@ table th {
 }
 
 .archive ul {
-  font-size: 21px;
+  font-size: 1rem;
+}
+
+details {
+  margin-top: 2rem;
+}
+
+.post .toc {
+  background-color: #7c6f64;
+  border: black 1px dashed;
+  display: inline-block;
+  margin: 1rem;
+  padding: .5rem 1rem;
+}
+
+.post .toc a:hover {
+  text-decoration: underline;
+}
+
+.post .toc li > ul {
+  margin-left: 1.5rem;
+}
+
+.post .toc ul {
+  list-style: none;
+}
+
+.toc.numbered-subtitles {
+  counter-reset: ul-h2;
+}
+
+.toc.numbered-subtitles li {
+  counter-reset: ul-h3;
+}
+
+.toc.numbered-subtitles li:before {
+  counter-increment: ul-h2;
+  content: counter(ul-h2);
+}
+
+.toc.numbered-subtitles li li {
+  counter-reset: ul-h3;
+}
+
+.toc.numbered-subtitles li li:before {
+  counter-increment: ul-h3;
+  content: counter(ul-h2) "." counter(ul-h3) " ";
+}
+
+.toc.numbered-subtitles li li li {
+  counter-reset: ul-h4;
+}
+
+.toc.numbered-subtitles li li li:before {
+  counter-increment: ul-h4;
+  content: counter(ul-h2) "." counter(ul-h3) "." counter(ul-h4) " ";
+}
+
+.toc.numbered-subtitles li li li li {
+  counter-reset: ul-h5;
+}
+
+.toc.numbered-subtitles li li li li:before {
+  counter-increment: ul-h5;
+  content: counter(ul-h2) "." counter(ul-h3) "." counter(ul-h4) "." counter(ul-h5) " ";
+}
+
+.toc.numbered-subtitles li li li li li {
+  counter-reset: ul-h6;
+}
+
+.toc.numbered-subtitles li li li li li:before {
+  counter-increment: ul-h6;
+  content: counter(ul-h2) "." counter(ul-h3) "." counter(ul-h4) "." counter(ul-h5) "." counter(ul-h6) " ";
 }
