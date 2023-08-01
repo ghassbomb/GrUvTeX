@@ -11,8 +11,8 @@
   --color-aqua: #8ec07c;
   --color-gray: #a89984;
   --font: "Latin Modern Roman", serif;
-  font-size: 22px; /* Base Font Size */
 }
+
 /* global */
 
 * {
@@ -25,6 +25,14 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 12px;
+  /* Base Font Size */
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 22px;
+  }
 }
 
 a {
@@ -34,16 +42,6 @@ a {
 
 a:hover {
   color: #a89984;
-}
-
-@media screen and (min-width: 768px) {
-  main > .post-group > ul {
-    margin-left: 1rem;
-    padding-left: 2rem;
-  }
-  main > .post > div {
-    margin-left: 2rem;
-  }
 }
 
 time {
@@ -72,9 +70,10 @@ time {
   color: #cc241d;
 }
 
-.summary {
+.content > .summary {
   font-style: italic;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1rem;
 }
 
 .paginator {
@@ -111,9 +110,9 @@ header {
   flex-direction: column;
 }
 
-header > h1 {
+header>h1 {
   font-variant: small-caps;
-  letter-spacing: 13px;
+  letter-spacing: 0.6rem;
   text-align: center;
   font-size: 3.375rem;
   text-shadow: 0.5px 0.5px #333e51, 1px 1px #333e51, 1.5px 1.5px #333e51,
@@ -122,18 +121,18 @@ header > h1 {
     6px 6px #333e51, 6.5px 6.5px #333e51, 7px 7px #333e51;
 }
 
-header > nav {
+header>nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   font-variant: small-caps;
   font-weight: bold;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 40rem;
   width: 100%;
 }
 
-header > nav > span > a {
+header>nav>span>a {
   font-size: 1rem;
 }
 
@@ -144,20 +143,20 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  max-width: 768px;
+  max-width: 34rem;
   padding: 2rem 0;
   width: calc(100% - 2rem);
 }
 
-main > h1 {
+main>h1 {
   text-align: center;
 }
 
-main > .content {
+main>.content {
   padding-top: 1rem;
 }
 
-main > .warning {
+main>.warning {
   background-color: var(--color-red);
   color: var(--color-foreground);
   font-size: 0.75rem;
@@ -166,30 +165,30 @@ main > .warning {
   text-align: center;
 }
 
-main > .post-group > ul {
+main>.post-group>ul {
   border-left: var(--color-gray) solid 1px;
   list-style-type: none;
   margin-left: 0.5rem;
   padding-left: 1rem;
 }
 
-main > .post-group > ul > li {
+main>.post-group>ul>li {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  line-height: 1.6;
+  line-height: 1.6rem;
 }
 
-main > .post-group > ul > li > time {
+main>.post-group>ul>li>time {
   text-align: right;
 }
 
-main > .post + .post {
+main>.post+.post {
   margin-top: 2rem;
 }
 
-main > .post > h2 {
+main>.post>h2 {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
@@ -198,7 +197,7 @@ main > .post > h2 {
 
 .metadata {
   align-items: center;
-  margin-top: 50px;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
 }
@@ -227,7 +226,7 @@ main > .post > h2 {
   margin-right: 1rem;
 }
 
-main > .post > .content {
+main>.post>.content {
   padding-top: 1rem;
 }
 
@@ -240,7 +239,7 @@ footer {
   flex-direction: column;
 }
 
-footer > .footnote {
+footer>.footnote {
   margin-bottom: 0.3rem;
   text-align: center;
 }
@@ -290,12 +289,14 @@ footer > .footnote {
 
 .content blockquote {
   border-left: var(--color-foreground) 2px solid;
-  margin: 1.5em 0 1.5em 0;
-  padding-left: 2em;
+  background-color: #504945;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 0;
+  padding-left: 1.3rem;
 }
 
-.content blockquote > p {
-  line-height: 130%;
+.content blockquote>p {
+  line-height: 1.3rem;
   font-size: 0.9rem;
 }
 
@@ -313,7 +314,7 @@ footer > .footnote {
 .content h4,
 .content h5,
 .content h6 {
-  letter-spacing: -0.5px;
+  letter-spacing: -0.01rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -344,9 +345,8 @@ footer > .footnote {
 
 .content p {
   text-align: left;
-  font-size: 1rem;
-  line-height: 33px;
-  max-width: 750px;
+  line-height: 1.5rem;
+  max-width: 34rem;
 }
 
 .content pre {
@@ -392,7 +392,7 @@ table th {
   text-transform: lowercase;
   font-size: 0.95rem;
   padding: 0.3rem 0.5rem;
-  line-height: 1.05;
+  line-height: 1.05rem;
 }
 
 #share-buttons {
@@ -419,7 +419,7 @@ details {
   text-decoration: underline;
 }
 
-.post .toc li > ul {
+.post .toc li>ul {
   margin-left: 1.5rem;
 }
 
