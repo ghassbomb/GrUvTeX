@@ -11,6 +11,7 @@
   --color-aqua: #8ec07c;
   --color-gray: #a89984;
   --font: "Latin Modern Roman", serif;
+  --font-sc: "Latin Modern Roman SC", serif;
 }
 
 /* global */
@@ -111,6 +112,7 @@ header {
 }
 
 header>h1 {
+  font-family: var(--font-sc);
   font-variant: small-caps;
   letter-spacing: 0.6rem;
   text-align: center;
@@ -122,6 +124,7 @@ header>h1 {
 }
 
 header>nav {
+  font-family: var(--font-sc);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -192,8 +195,9 @@ main>.post>h2 {
 }
 
 .metadata {
+  font-family: var(--font-sc);
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
 }
@@ -367,6 +371,7 @@ h4 {
 }
 
 .content th {
+  font-family: var(--font-sc);
   text-transform: uppercase;
   font-variant: small-caps;
   font-size: 0.8rem;
@@ -437,5 +442,6 @@ details {
 }
 
 .pinned-post {
+  font-family: var(--font-sc);
   font-variant: small-caps;
 }

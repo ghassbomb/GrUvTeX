@@ -1,39 +1,41 @@
 @font-face {
-  font-display: swap;
-  font-family: "Latin Modern Roman";
+  font-family: 'Latin Modern Roman';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lmroman10-regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Latin Modern Roman';
   font-style: normal;
   font-weight: bold;
-  src: url("../fonts/lmroman-bold.otf");
+  src: url('../fonts/lmroman10-bold.otf') format('opentype');
 }
 
-@font-face {  
-  font-display: swap;
-  font-family: "Latin Modern Roman";
+@font-face {
+  font-family: 'Latin Modern Roman';
+  font-style: italic;
+  font-weight: normal;
+  src: url('../fonts/lmroman10-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Latin Modern Roman';
   font-style: italic;
   font-weight: bold;
-  src: url("../fonts/lmroman-bolditalic.otf");
+  src: url('../fonts/lmroman10-bolditalic.otf') format('opentype');
 }
 
 @font-face {
-  font-display: swap;
-  font-family: "Latin Modern Roman";
+  font-family: 'Latin Modern Roman SC';
   font-style: italic;
   font-weight: normal;
-  src: url("../fonts/lmroman-italic.otf");
+  src: url('../fonts/lmromancaps10-oblique.otf') format('opentype');
 }
 
 @font-face {
-  font-display: swap;
-  font-family: "Latin Modern Roman";
+  font-family: 'Latin Modern Roman SC';
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/lmroman-regular.otf");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Latin Modern Roman SC";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/lmromancaps-regular.otf");
+  src: url('../fonts/lmromancaps10-regular.otf') format('opentype');
 }
