@@ -1,8 +1,29 @@
 {{ define "main" }}
 <main id="main" class="archive">
   <h1>{{ .Title }}</h1>
-  {{ $pages := where .Data.Pages "Type" "posts" }} {{ range $pages.GroupByDate
-  "2006-01" }}
+  {{ $pages := where .Data.Pages "Type" "posts" }}
+  {{ $pinnedPages := slice }} {{ range $pages }} {{ if .Params.pinned }} {{
+  $pinnedPages = $pinnedPages | append . }} {{ end }} {{ end }} {{ if
+  $pinnedPages }}
+  <div class="post-group">
+    <h2>📌 Posts</h2>
+    <ul>
+      {{ range $pinnedPages }}
+      <li>
+        <b><a class="link pinned-post" href="{{ .RelPermalink }}">{{ .Title }}</a></b>
+        <time>
+          {{ with .Date }}
+          <i class="fa-solid fa-calendar-days"></i>
+          {{ . | time.Format ":date_long" }} {{ end }} {{ with .PublishDate }}
+          <i class="fa-solid fa-calendar-days"></i>
+          {{ . | time.Format ":date_long" }} {{ end }}
+        </time>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }} {{ $pages := where .Data.Pages "Type" "posts" }} {{ range
+  $pages.GroupByDate "2006-01" }}
   <div class="post-group">
     <h2>{{ dateFormat "January 2006" (printf "%s-01" .Key) }}</h2>
     <ul>
@@ -21,7 +42,6 @@
     </ul>
   </div>
   {{ end }}
-  {{ $pages := where .Data.Pages "Type" "posts" }}
   <div class="post-group">
     <h2>...</h2>
   </div>

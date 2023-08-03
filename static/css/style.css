@@ -73,7 +73,7 @@ time {
 .content > .summary {
   font-style: italic;
   font-size: 0.9rem;
-  line-height: 1rem;
+  line-height: 1.5;
 }
 
 .paginator {
@@ -184,10 +184,6 @@ main>.post-group>ul>li>time {
   text-align: right;
 }
 
-main>.post+.post {
-  margin-top: 2rem;
-}
-
 main>.post>h2 {
   align-items: center;
   flex-direction: row;
@@ -247,6 +243,7 @@ footer>.footnote {
 /* content */
 
 .post-title {
+  margin-top: 3rem;
   font-size: 2.25rem;
 }
 
@@ -305,35 +302,35 @@ footer>.footnote {
   padding: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
 
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
-  letter-spacing: -0.01rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.03rem;
+  line-height: 1.2;
+}
+
+.content h1,.content h2,.content h3, .content h4, .content h5, .content h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
-.content h1 {
+h1 {
   font-size: 3.375rem;
-  line-height: -1rem;
 }
 
-.content h2 {
-  font-size: 2.25rem;
-  line-height: -0.8rem;
+h2 {
+  font-size: 1.7rem;
 }
 
-.content h3 {
+h3 {
   font-size: 1.5rem;
-  line-height: -0.6rem;
 }
 
-.content h4 {
+h4 {
   font-size: 1rem;
-  line-height: -0.4rem;
 }
 
 .content img {
@@ -410,6 +407,11 @@ details {
   margin-top: 2rem;
 }
 
+.post {
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
 .post .toc {
   background-color: #504945;
   border: var(--color-aqua) 0.1rem dashed;
@@ -432,4 +434,8 @@ details {
 
 .post .toc ul {
   list-style: none;
+}
+
+.pinned-post {
+  font-variant: small-caps;
 }
