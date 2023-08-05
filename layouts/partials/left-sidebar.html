@@ -1,0 +1,25 @@
+{{ if ne .Section "posts"}}
+{{ else }}
+
+{{ with .Params.summary }}
+<div class="post-summary">
+  <p>{{ . }}</p>
+</div>
+{{ end }}
+<div class="featured-posts">
+  <h4>Related</h4>
+  {{ $category := "" }}
+  {{ range .Params.categories }}
+    {{ $category = . }}
+  {{ end }}
+  {{ $maxPosts := 5 }}
+  {{ $count := 0 }}
+  {{ range where .Site.RegularPages ".Params.categories" "intersect" (slice $category)  }}
+    {{ if and (ne .Permalink $.Permalink) (lt $count $maxPosts) }}
+      <a class="link" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ $count = add $count 1 }}
+    {{ end }}
+  {{ end }}
+</div>
+
+{{ end }}

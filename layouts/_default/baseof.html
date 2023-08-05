@@ -6,7 +6,7 @@
   <body>
     <div id="content">
       <header>{{- partial "header.html" . -}}</header>
-      <div class="left-sidebar"></div>
+      <div class="left-sidebar">{{- partial "left-sidebar.html" . -}}</div>
       {{- block "main" . }}{{- end }}
       <div class="right-sidebar">{{- partial "toc.html" . -}}</div>
       <footer>{{- partial "footer.html" . -}}</footer>

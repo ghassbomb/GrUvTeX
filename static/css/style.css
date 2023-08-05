@@ -325,8 +325,8 @@ h6 {
 }
 
 .content h1,.content h2,.content h3, .content h4, .content h5, .content h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 h1 {
@@ -465,3 +465,36 @@ details {
   color: var(--color-foreground); /* Change this to your desired active link color */
   font-weight: bold;
 }
+
+.left-sidebar {
+  margin-top: 2rem;
+  padding-left: 2rem;
+}
+
+.post-summary {
+  font-family: var(--font-sc);
+  font-size: 0.8rem;
+  border-left: 1px solid var(--color-gray);
+  position: sticky;
+	top: 2rem;
+	align-self: start;
+}
+
+.post-summary p {
+    text-decoration: none;
+    display: block;
+    margin-left: 1rem;
+    transition: all 100ms ease-in-out;
+}
+
+.featured-posts {
+  font-family: var(--font-sc);
+  font-size: 0.8rem;
+  border-left: 1px solid var(--color-gray);
+  padding-left: 1rem;
+  margin-top: 2rem;
+  position: sticky;
+	top: 10rem;
+	align-self: start;
+}
+
