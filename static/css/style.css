@@ -26,8 +26,10 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 14px;
   /* Base Font Size */
+  font-size: 14px;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
 @media only screen and (min-width: 768px) {
@@ -37,13 +39,9 @@ html {
 }
 
 #content {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
   display: grid;
-  grid-template-columns: 17rem 40rem 17rem;
+  grid-template-columns: 19.5vw 60vw 19.5vw;
   font-family: var(--font);
-  min-height: 100vh;
-  padding: 1rem;
 }
 
 a {
@@ -105,13 +103,19 @@ time {
 /* header */
 
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   grid-column-start: 2;
   grid-column-end: 3;
+  margin-bottom: 2rem;
 }
 
 header>h1 {
+  display: flex;
   font-family: var(--font-sc);
   font-variant: small-caps;
+  flex-wrap: wrap;
   letter-spacing: 0.6rem;
   text-align: center;
   font-size: 3.375rem;
@@ -126,7 +130,9 @@ header>nav {
   font-family: var(--font-sc);
   font-variant: small-caps;
   justify-content: space-between;
+  flex-wrap: wrap;
   font-weight: bold;
+  padding: 0 1rem 0 1rem;
   max-width: 40rem;
   width: 100%;
 }
@@ -138,11 +144,12 @@ header>nav>span>a {
 /* main */
 
 main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 7vw 0 7vw;
   grid-column-start: 2;
   grid-column-end: 3;
-  max-width: 34rem;
-  padding: 2rem 0;
-  width: calc(100% - 2rem);
+  width: 100%;
 }
 
 .left-sidebar {
@@ -199,21 +206,15 @@ main>.post>h2 {
 }
 
 .metadata {
+  display: flex;
+  flex-wrap: wrap;
   font-family: var(--font-sc);
-  align-items: center;
-  margin-top: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.start-metadata {
-  width: 100%;
-}
-
-.end-metadata {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+.grey {
+  margin-bottom: 1rem;
 }
 
 .metadata time {
@@ -243,6 +244,8 @@ footer {
   display: flex;
   font-size: 0.75rem;
   flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 footer>.footnote {
@@ -253,7 +256,6 @@ footer>.footnote {
 /* content */
 
 .post-title {
-  margin-top: 3rem;
   font-size: 2.25rem;
 }
 
@@ -350,7 +352,7 @@ h4 {
 .content p {
   text-align: left;
   line-height: 1.5rem;
-  max-width: 34rem;
+  max-width: 50vw;
 }
 
 .content pre {
@@ -420,7 +422,6 @@ details {
 
 .post {
   margin-bottom: 1rem;
-  padding: 0;
 }
 
 .post .toc {

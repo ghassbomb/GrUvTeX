@@ -6,22 +6,7 @@
   <article class="content">{{ .Content }}</article>
   {{ else }}
   <div class="metadata">
-    <div class="start-metadata">
-      <div class="keywords">
-        {{ range .Params.categories }}
-        <b
-          ><a class="link" href='{{ "categories" | absURL }}/{{ . | urlize }}'
-            >#{{ . }}</a
-          ></b
-        >
-        {{ end }} {{ range .Params.tags }}
-        <a class="link" href='{{ "tags" | absURL }}/{{ . | urlize }}'
-          >#{{ . }}</a
-        >
-        {{ end }}
-      </div>
-    </div>
-    <div class="end-metadata">
+    <div class="grey">
       {{ if .Site.Params.showWordCount }}
       <span>{{ .WordCount }} words</span>
       {{ end }} {{ if gt .ReadingTime 1 }} {{ .Scratch.Set "timeUnit" "mins" }}
@@ -36,6 +21,21 @@
         <i class="fa-solid fa-calendar-days"></i>
         {{ . | time.Format ":date_long" }} {{ end }}
       </time>
+    </div>
+    <div class="non-grey">
+      <div class="keywords">
+        {{ range .Params.categories }}
+        <b
+          ><a class="link" href='{{ "categories" | absURL }}/{{ . | urlize }}'
+            >#{{ . }}</a
+          ></b
+        >
+        {{ end }} {{ range .Params.tags }}
+        <a class="link" href='{{ "tags" | absURL }}/{{ . | urlize }}'
+          >#{{ . }}</a
+        >
+        {{ end }}
+      </div>
     </div>
   </div>
   <details>
