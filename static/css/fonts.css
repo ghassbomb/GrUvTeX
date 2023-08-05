@@ -1,4 +1,5 @@
 @font-face {
+  font-display: swap;
   font-family: 'Latin Modern Roman';
   font-style: normal;
   font-weight: 400;
@@ -6,6 +7,7 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Latin Modern Roman';
   font-style: normal;
   font-weight: bold;
@@ -13,6 +15,7 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Latin Modern Roman';
   font-style: italic;
   font-weight: normal;
@@ -20,6 +23,7 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Latin Modern Roman';
   font-style: italic;
   font-weight: bold;
@@ -27,6 +31,7 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Latin Modern Roman SC';
   font-style: italic;
   font-weight: normal;
@@ -34,6 +39,7 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Latin Modern Roman SC';
   font-style: normal;
   font-weight: normal;
