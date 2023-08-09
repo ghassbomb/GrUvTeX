@@ -1,8 +1,8 @@
 {{ define "main" }}
-<main class="post">
+<main>
   <h2 class="post-title">{{ .Title }}</h2>
   {{ if ne .Section "posts"}}
-  <article class="content">{{ .Content }}</article>
+  <article>{{ .Content }}</article>
   {{ else }}
   <div class="metadata">
     <div class="grey">
@@ -15,22 +15,27 @@
       {{ end }}
       <time>
         {{ with .Date }}
-        <i class="fa-solid fa-calendar-days"></i>
         {{ . | time.Format ":date_long" }} {{ end }} {{ with .PublishDate }}
-        <i class="fa-solid fa-calendar-days"></i>
         {{ . | time.Format ":date_long" }} {{ end }}
       </time>
+    </div>
+    <div class="series">
+      {{ if ne .Params.series nil }}
+      {{ range .Params.series }}
+      <p>Part of: <a href='{{ "series" | absURL }}/{{ . | urlize }}'>{{ . }}</a></p>
+      {{ end }}
+      {{ end }}
     </div>
     <div class="non-grey">
       <div class="keywords">
         {{ range .Params.categories }}
         <b
-          ><a class="link" href='{{ "categories" | absURL }}/{{ . | urlize }}'
+          ><a href='{{ "categories" | absURL }}/{{ . | urlize }}'
             >#{{ . }}</a
           ></b
         >
         {{ end }} {{ range .Params.tags }}
-        <a class="link" href='{{ "tags" | absURL }}/{{ . | urlize }}'
+       <a href='{{ "tags" | absURL }}/{{ . | urlize }}'
           >#{{ . }}</a
         >
         {{ end }}
@@ -41,11 +46,11 @@
   <div id="share-buttons">{{ partial "share-buttons.html" . }}</div>
   <div class="paginator">
     {{ if .PrevInSection }}
-    <a class="link" href="{{ .PrevInSection.Permalink }}">← prev</a>
+   <a href="{{ .PrevInSection.Permalink }}">← prev</a>
     {{ else }}
     <a></a>
     {{ end }} {{ if .NextInSection }}
-    <a class="link" href="{{ .NextInSection.Permalink }}">next →</a>
+   <a href="{{ .NextInSection.Permalink }}">next →</a>
     {{ else }}
     <a></a>
     {{ end }}

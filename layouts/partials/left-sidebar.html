@@ -1,25 +1,41 @@
-{{ if ne .Section "posts"}}
-{{ else }}
-
-{{ with .Params.summary }}
-<div class="post-summary">
-  <p>{{ . }}</p>
-</div>
-{{ end }}
-<div class="featured-posts">
-  <h4>Related</h4>
-  {{ $category := "" }}
-  {{ range .Params.categories }}
-    {{ $category = . }}
+{{ if eq .Section "posts" }}
+  {{ with .Params.summary }}
+  <div class="post-summary">
+    <p>{{ . }}</p>
+  </div>
   {{ end }}
+
+  {{ $series := index .Params.series 0 }}
+  {{ $relatedPosts := where .Site.RegularPages ".Params.series" "intersect" (slice $series) }}
+  {{ $count := len $relatedPosts }}
+  {{ if gt $count 0 }}
+  <div id="series" class="featured-posts">
+    <h4>In This Series</h4>
+    <ol>
+      {{ range $relatedPosts }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ol>
+  </div>
+  {{ end }}
+
+  {{ $category := index .Params.categories 0 }}
+  {{ $relatedPosts := where .Site.RegularPages ".Params.categories" "intersect" (slice $category) }}
   {{ $maxPosts := 5 }}
   {{ $count := 0 }}
-  {{ range where .Site.RegularPages ".Params.categories" "intersect" (slice $category)  }}
+  {{ range $relatedPosts }}
     {{ if and (ne .Permalink $.Permalink) (lt $count $maxPosts) }}
-      <a class="link" href="{{ .Permalink }}">{{ .Title }}</a>
       {{ $count = add $count 1 }}
     {{ end }}
   {{ end }}
-</div>
-
+  {{ if gt $count 0 }}
+  <div class="featured-posts">
+    <h4>Related</h4>
+      {{ range $relatedPosts }}
+        {{ if and (ne .Permalink $.Permalink) (lt $count $maxPosts) }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ end }}
+      {{ end }}
+  </div>
+  {{ end }}
 {{ end }}

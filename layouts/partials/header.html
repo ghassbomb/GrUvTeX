@@ -1,15 +1,16 @@
 {{ $parsedUrl := urls.Parse .Site.BaseURL }} {{ $domain := $parsedUrl.Host }} {{
-$domainWithoutWWW := replace $domain "www." "" }}
-<h1>
-  <a href="{{ .Site.BaseURL }}"
-    >{{ .Site.Params.title | default .Site.Title }}</a
-  >
-</h1>
-
-<nav>
-  {{ range .Site.Menus.main }}
-  <span class="nav-bar-item">
-    <a class="link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
-  </span>
-  {{ end }}
-</nav>
+  $domainWithoutWWW := replace $domain "www." "" }}
+  <h1>
+    <a class="link" href="{{ .Site.BaseURL }}"
+      >{{ .Site.Params.title | default .Site.Title }}</a
+    >
+  </h1>
+  
+  <nav>
+    {{ range .Site.Menus.main }}
+    <span class="nav-bar-item">
+     <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
+    </span>
+    {{ end }}
+  </nav>
+  

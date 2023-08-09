@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main id="main" class="archive">
+<main>
   <h1>{{ .Title }}</h1>
   {{ $pages := where .Data.Pages "Type" "posts" }}
   {{ $pinnedPages := slice }} {{ range $pages }} {{ if .Params.pinned }} {{
@@ -10,12 +10,10 @@
     <ul>
       {{ range $pinnedPages }}
       <li>
-        <b><a class="link pinned-post" href="{{ .RelPermalink }}">{{ .Title }}</a></b>
+        <b><a class="pinned-post" href="{{ .RelPermalink }}">{{ .Title }}</a></b>
         <time>
           {{ with .Date }}
-          <i class="fa-solid fa-calendar-days"></i>
           {{ . | time.Format ":date_long" }} {{ end }} {{ with .PublishDate }}
-          <i class="fa-solid fa-calendar-days"></i>
           {{ . | time.Format ":date_long" }} {{ end }}
         </time>
       </li>
@@ -29,12 +27,10 @@
     <ul>
       {{ range .Pages }}
       <li>
-        <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         <time>
           {{ with .Date }}
-          <i class="fa-solid fa-calendar-days"></i>
           {{ . | time.Format ":date_long" }} {{ end }} {{ with .PublishDate }}
-          <i class="fa-solid fa-calendar-days"></i>
           {{ . | time.Format ":date_long" }} {{ end }}
         </time>
       </li>
