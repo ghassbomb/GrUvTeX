@@ -1,7 +1,6 @@
 {{ define "main" }}
 <main class="post">
   <h2 class="post-title">{{ .Title }}</h2>
-
   {{ if ne .Section "posts"}}
   <article class="content">{{ .Content }}</article>
   {{ else }}
