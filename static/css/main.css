@@ -110,7 +110,7 @@ html h4 {
 }
 html #content {
   display: grid;
-  grid-template-columns: 19.5vw 60vw 19.5vw;
+  grid-template-columns: 1fr 3fr 1fr;
   font-family: var(--font);
 }
 html #content header {
@@ -129,20 +129,20 @@ html #content header h1 {
   text-align: center;
   font-size: 3.375rem;
   text-shadow:
-    0.5px 0.5px #333e51,
-    1px 1px #333e51,
-    1.5px 1.5px #333e51,
-    2px 2px #333e51,
-    2.5px 2.5px #333e51,
-    3px 3px #333e51,
-    3.5px 3.5px #333e51,
-    4px 4px #333e51,
-    4.5px 4.5px #333e51,
-    5px 5px #333e51,
-    5.5px 5.5px #333e51,
-    6px 6px #333e51,
-    6.5px 6.5px #333e51,
-    7px 7px #333e51;
+    0.5px 0.5px var(--bg2),
+    1px 1px var(--bg2),
+    1.5px 1.5px var(--bg2),
+    2px 2px var(--bg2),
+    2.5px 2.5px var(--bg2),
+    3px 3px var(--bg2),
+    3.5px 3.5px var(--bg2),
+    4px 4px var(--bg2),
+    4.5px 4.5px var(--bg2),
+    5px 5px var(--bg2),
+    5.5px 5.5px var(--bg2),
+    6px 6px var(--bg2),
+    6.5px 6.5px var(--bg2),
+    7px 7px var(--bg2);
 }
 html #content header nav {
   display: flex;
@@ -150,7 +150,7 @@ html #content header nav {
   flex-wrap: wrap;
   font-weight: bold;
   padding: 0 1rem 0 1rem;
-  max-width: 40rem;
+  max-width: 60vw;
   width: 100%;
 }
 html #content main {
@@ -351,7 +351,7 @@ html #content article img {
 html #content article p {
   text-align: left;
   line-height: 1.5rem;
-  max-width: 50vw;
+  max-width: 60vw;
 }
 html #content article pre {
   background-color: var(--gray);
@@ -431,5 +431,14 @@ html #content .summary {
 @media only screen and (min-width: 768px) {
   html {
     font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #left-sidebar {
+    display: none;
+  }
+  #right-sidebar {
+    display: none;
   }
 }
