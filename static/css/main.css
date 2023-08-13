@@ -293,6 +293,14 @@ html #content footer .footnote {
   text-align: center;
   /* modules */
 }
+html #content footer .socials {
+  margin-bottom: 0.3rem;
+  text-align: center;
+  /* modules */
+}
+html #content footer .socials i {
+  font-size: 0.9rem;
+}
 html #content article {
   padding-top: 1rem;
 }
