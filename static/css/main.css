@@ -117,10 +117,11 @@ html #content header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  grid-column: 2 / 3;
+  grid-column: 1 / 4;
   margin-bottom: 2rem;
   font-family: var(--font-sc);
   font-variant: small-caps;
+
 }
 html #content header h1 {
   display: flex;
@@ -338,11 +339,10 @@ html #content article blockquote {
   border-left: var(--orange) 2px solid;
   background-color: var(--bg2);
   margin: 1.5rem 0 1.5rem 0;
-  padding: 0.5rem 0 0.5rem 0;
-  padding-left: 1.3rem;
+  padding: 0.5rem 0 0.5rem 1.3rem;
 }
 html #content article blockquote p {
-  line-height: 1.3rem;
+  line-height: 1.3;
   font-size: 0.9rem;
   margin-bottom: 0;
 }
