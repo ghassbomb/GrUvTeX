@@ -224,6 +224,8 @@ html #content #left-sidebar .post-summary p {
 }
 html #content #left-sidebar .featured-posts {
   font-family: var(--font-sc);
+  display: flex;
+  flex-direction: column;
   font-size: 0.8rem;
   border-left: 1px solid var(--gray);
   padding-left: 1rem;
@@ -246,12 +248,11 @@ html #content #left-sidebar #series a ol {
 html #content #right-sidebar {
   grid-column: 3 / 4;
   position: sticky;
-  top: 2rem;
+  top: 0.1rem;
   align-self: start;
 }
 html #content #right-sidebar #TableOfContents {
-  font-family: var(--font-sc);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin-top: 2rem;
   padding-left: 0;
   border-left: 1px solid var(--gray);
@@ -272,6 +273,7 @@ html #content #right-sidebar #TableOfContents ol {
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: 100%;
 }
 html #content #right-sidebar #TableOfContents li {
   margin-left: 1rem;
