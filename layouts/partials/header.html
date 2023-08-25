@@ -1,16 +1,19 @@
 {{ $parsedUrl := urls.Parse .Site.BaseURL }} {{ $domain := $parsedUrl.Host }} {{
-  $domainWithoutWWW := replace $domain "www." "" }}
-  <h1>
-    <a class="link" href="{{ .Site.BaseURL }}"
-      >{{ .Site.Params.title | default .Site.Title }}</a
-    >
-  </h1>
-  
-  <nav>
-    {{ range .Site.Menus.main }}
-    <span class="nav-bar-item">
-     <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
-    </span>
-    {{ end }}
-  </nav>
-  
+$domainWithoutWWW := replace $domain "www." "" }}
+<div id="brand"><a class="icon-link" href="/"><img class="icon"
+      src="/images/pfp.png"></a>
+  <div class="text"><a class="link" href="{{ .Site.BaseURL }}">
+      <h1>{{ .Site.Params.title | default
+        .Site.Title }}</h1>
+    </a>
+    <p>{{ .Site.Params.description }}</p>
+  </div>
+</div>
+
+<nav>
+  {{ range .Site.Menus.main }}
+  <span class="nav-bar-item">
+    <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
+  </span>
+  {{ end }}
+</nav>

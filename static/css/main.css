@@ -68,9 +68,6 @@ html a {
 html a:hover {
   color: var(--red-dim);
 }
-html details {
-  margin-top: 2rem;
-}
 html .link {
   color: var(--fg);
 }
@@ -114,45 +111,44 @@ html #content {
   font-family: var(--font);
 }
 html #content header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  grid-column: 1 / 4;
-  margin-bottom: 2rem;
-  font-family: var(--font-sc);
-  font-variant: small-caps;
-
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  grid-column: 2 / 3;
 }
-html #content header h1 {
+html #content header #brand {
+  flex-direction: row;
+  text-align: unset;
   display: flex;
-  flex-wrap: wrap;
-  letter-spacing: 0.6rem;
-  text-align: center;
-  font-size: 3.375rem;
-  text-shadow:
-    0.5px 0.5px var(--bg2),
-    1px 1px var(--bg2),
-    1.5px 1.5px var(--bg2),
-    2px 2px var(--bg2),
-    2.5px 2.5px var(--bg2),
-    3px 3px var(--bg2),
-    3.5px 3.5px var(--bg2),
-    4px 4px var(--bg2),
-    4.5px 4.5px var(--bg2),
-    5px 5px var(--bg2),
-    5.5px 5.5px var(--bg2),
-    6px 6px var(--bg2),
-    6.5px 6.5px var(--bg2),
-    7px 7px var(--bg2);
+  align-items: center;
+}
+html #content header #brand h1 {
+  font-family: var(--font-sc);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 0.8
+}
+html #content header #brand p {
+  line-height: 1;
+}
+html #content header #brand .icon {
+  height: 6rem;
+  margin: 2.5rem 1rem 0 1rem;
+}
+html #content header #brand .icon:hover {
+  filter: grayscale(100%);
 }
 html #content header nav {
+  font-family: var(--font-sc);
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   font-weight: bold;
-  padding: 0 1rem 0 1rem;
-  max-width: 60vw;
-  width: 100%;
+  justify-content: center;
+  padding: 0 1rem 0 0;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+html #content header nav span {
+  margin-right: 1rem;
 }
 html #content main {
   display: flex;
@@ -190,6 +186,22 @@ html #content main .post-group ul li {
 }
 html #content main .post-group ul li time {
   text-align: right;
+}
+html #content main .projects-list ul {
+  font-family: var(--font-sc);
+  font-variant: small-caps;
+  font-weight: bold;
+}
+html #content main .projects-list ul ul {
+  font-family: var(--font);
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 0.9rem;
+  border-left: var(--gray) solid 1px;
+  list-style-type: none;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
 }
 html #content main .post {
   margin-bottom: 1rem;
@@ -283,6 +295,7 @@ html #content #right-sidebar #TableOfContents a.active {
   font-weight: bold;
 }
 html #content footer {
+  font-family: var(--font-sc);
   grid-column: 2 / 3;
   align-items: center;
   display: flex;
@@ -445,6 +458,21 @@ html #content .summary {
 }
 
 @media only screen and (max-width: 768px) {
+  html #content main {
+    grid-column: 1 / 4;
+  }
+  html #content article p {
+    max-width: 80vw;
+  }
+  html #content header #brand .icon {
+    display: none;
+  }
+  html #content header #brand h1 {
+    line-height: 1;
+  }
+  html #content header nav {
+    margin-left: 0rem;
+  }
   #left-sidebar {
     display: none;
   }
