@@ -1,4 +1,7 @@
 {{ define "main" }}
+{{ if (.Params.mermaid) }}
+{{ partial "mermaid.html" }}
+{{ end }}
 <main>
   <h2 class="post-title">{{ .Title }}</h2>
   {{ if ne .Section "posts"}}

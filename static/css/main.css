@@ -143,9 +143,7 @@ html #content header nav {
   flex-wrap: wrap;
   font-weight: bold;
   justify-content: center;
-  padding: 0 1rem 0 0;
   margin-left: 2rem;
-  margin-top: 1rem;
 }
 html #content header nav span {
   margin-right: 1rem;
@@ -256,43 +254,6 @@ html #content #left-sidebar #series a:hover {
 }
 html #content #left-sidebar #series a ol {
   margin-left: 1.2rem;
-}
-html #content #right-sidebar {
-  grid-column: 3 / 4;
-  position: sticky;
-  top: 0.1rem;
-  align-self: start;
-}
-html #content #right-sidebar #TableOfContents {
-  font-size: 0.7rem;
-  margin-top: 2rem;
-  padding-left: 0;
-  border-left: 1px solid var(--gray);
-}
-html #content #right-sidebar #TableOfContents a {
-  text-decoration: none;
-  display: block;
-  padding: 0.125rem 0;
-  color: var(--gray);
-  transition: all 100ms ease-in-out;
-}
-html #content #right-sidebar #TableOfContents a:hover,
-html #content #right-sidebar #TableOfContents a:focus {
-  color: var(--fg4);
-}
-html #content #right-sidebar #TableOfContents ul,
-html #content #right-sidebar #TableOfContents ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-height: 100%;
-}
-html #content #right-sidebar #TableOfContents li {
-  margin-left: 1rem;
-}
-html #content #right-sidebar #TableOfContents a.active {
-  color: var(--fg);
-  font-weight: bold;
 }
 html #content footer {
   font-family: var(--font-sc);
@@ -450,6 +411,11 @@ html #content .summary {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   line-height: 1.5;
+}
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 25px 0px
 }
 @media only screen and (min-width: 768px) {
   html {

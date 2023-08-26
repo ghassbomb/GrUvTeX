@@ -11,38 +11,5 @@
       <div id="right-sidebar">{{- partial "right-sidebar.html" . -}}</div>
       <footer>{{- partial "footer.html" . -}}</footer>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const headers = document.querySelectorAll(
-          "#content h2, #content h3, #content h4"
-        ); // Adjust selector based on your content structure
-        const tocLinks = document.querySelectorAll("#TableOfContents a");
-
-        const headerOffsets = Array.from(headers).map((header) => {
-          return {
-            id: header.getAttribute("id"),
-            offset: header.offsetTop - 50, // Adjust the offset as needed
-          };
-        });
-
-        function highlightCurrentSection() {
-          const scrollPosition = window.scrollY;
-          for (let i = headerOffsets.length - 1; i >= 0; i--) {
-            if (scrollPosition >= headerOffsets[i].offset) {
-              const currentLinkId = headerOffsets[i].id;
-              tocLinks.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href").slice(1) === currentLinkId) {
-                  link.classList.add("active");
-                }
-              });
-              break;
-            }
-          }
-        }
-
-        window.addEventListener("scroll", highlightCurrentSection);
-      });
-    </script>
   </body>
 </html>
